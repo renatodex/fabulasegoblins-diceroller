@@ -1,0 +1,26 @@
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+}
+
+.main {
+  align-items: center;
+  max-width: 1045px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.grid {
+  grid-gap: 1.5rem;
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+  }
+}

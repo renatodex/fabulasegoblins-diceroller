@@ -3,5 +3,14 @@
   "subtitle": "A Random Dice Generator for RPG Campaigns",
   "rollinfo": {
     "subtitle": "Roll Details"
+  },
+  "generics": {
+    "close": "Close",
+    "submit": "Submit"
+  },
+  "navbar": {
+    "new_roll": "New Roll",
+    "inscription_body": "This tool is yet under active tests and experimentation. We still don't allow Roll creation to be used publicly, but if you want to be a Beta-tester of this tool, we can add you! All you have to do is to send an e-mail to tendadogoblin@gmail.com with the subject 'I want to use Dice Roller'",
+    "inscription_title": "Do you want to be a tester?"
   }
 }

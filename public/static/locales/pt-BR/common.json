@@ -3,5 +3,14 @@
   "subtitle": "Um gerador de dados para Jogos de RPG",
   "rollinfo": {
     "subtitle": "Informações da Rolagem"
+  },
+  "generics": {
+    "close": "Fechar",
+    "submit": "Enviar"
+  },
+  "navbar": {
+    "new_roll": "Nova Rolagem",
+    "inscription_body": "Essa ferramenta ainda está sob desenvolvimento e constante experimentação. Por isso, nós ainda não abrimos publicamente a ferramenta de gerar novas rolagens, mas se você quiser ser um Beta-tester dessa ferramenta, podemos te adicionar! Tudo que você precisa fazer é enviar um e-mail para tendadogoblin@gmail.com com o assunto 'Eu quero testar o Gerador de Rolagens'",
+    "inscription_title": "Você quer testar essa ferramenta?"
   }
 }
