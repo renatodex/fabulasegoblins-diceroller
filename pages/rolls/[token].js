@@ -1,8 +1,7 @@
-import PropTypes from 'prop-types'
 import Head from 'next/head'
-import { withTranslation } from '../i18n'
+import { withTranslation } from '../../i18n'
 
-const Home = ({ t }) => {
+const RollInfo = ({ t }) => {
   const rolls = [
     {
       token: 'dh928gf89fsdgt32kashsf7832gkfashdhf8274gf87s6f9hd',
@@ -12,24 +11,6 @@ const Home = ({ t }) => {
       result: '21',
       natural_success: true,
       natural_failure: false
-    },
-    {
-      token: 'dh928gf89fsdgt32kashsf7832gkfashdhf8274gf87s6f9hd',
-      total_faces: '20',
-      modifier: '+3',
-      created_at: '20',
-      result: '21',
-      natural_success: false,
-      natural_failure: false
-    },
-    {
-      token: 'dh928gf89fsdgt32kashsf7832gkfashdhf8274gf87s6f9hd',
-      total_faces: '20',
-      modifier: '+3',
-      created_at: '20',
-      result: '21',
-      natural_success: false,
-      natural_failure: true
     }
   ]
 
@@ -56,7 +37,7 @@ const Home = ({ t }) => {
   return (
     <div className='container'>
       <Head>
-        <title>Create Next App</title>
+        <title>Roll Info</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
@@ -68,14 +49,14 @@ const Home = ({ t }) => {
           </h1>
 
           <p className='description'>
-            {t('subtitle')}
+            {t('rollinfo.subtitle')}
           </p>
         </header>
 
         <div className='grid'>
           {rolls.map((roll) => (
             <a
-              href={`/rolls/${roll.token}`}
+              href='https://nextjs.org/docs'
               key={roll.token}
               className={cardClass(roll)}
             >
@@ -116,8 +97,6 @@ const Home = ({ t }) => {
 
         main {
           padding: 5rem 0;
-          flex: 1;
-          display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
@@ -189,18 +168,12 @@ const Home = ({ t }) => {
         }
 
         .grid {
-          display: flex;
-          align-items: left;
-          justify-content: left;
-          flex-wrap: wrap;
-
-          max-width: 1045px;
+          display: grid;
           margin-top: 3rem;
         }
 
         .card {
           margin: 1rem;
-          flex-basis: 45%;
           padding: 1.5rem;
           text-align: left;
           color: inherit;
@@ -294,12 +267,8 @@ const Home = ({ t }) => {
   )
 }
 
-Home.getInitialProps = async () => ({
+RollInfo.getInitialProps = async () => ({
   namespacesRequired: ['common']
 })
 
-Home.propTypes = {
-  t: PropTypes.func.isRequired
-}
-
-export default withTranslation('common')(Home)
+export default withTranslation('common')(RollInfo)

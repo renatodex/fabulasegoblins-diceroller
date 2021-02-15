@@ -1,0 +1,7 @@
+{
+  "title": "Dice Roller",
+  "subtitle": "A Random Dice Generator for RPG Campaigns",
+  "rollinfo": {
+    "subtitle": "Roll Details"
+  }
+}
