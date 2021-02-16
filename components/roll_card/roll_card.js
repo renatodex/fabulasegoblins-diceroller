@@ -4,9 +4,9 @@ import styles from './roll_card.module.scss'
 
 const RollCard = ({ t, roll, onRoll, allowRoll = false }) => {
   const cardClass = () => {
-    if (roll.natural_success) {
+    if (roll.critical_success) {
       return `${styles.card} ${styles['card--success']}`
-    } else if (roll.natural_failure) {
+    } else if (roll.critical_failure) {
       return `${styles.card} ${styles['card--failure']}`
     } else {
       return `${styles.card} ${styles['card--normal']}`
@@ -14,9 +14,9 @@ const RollCard = ({ t, roll, onRoll, allowRoll = false }) => {
   }
 
   const cardLabel = () => {
-    if (roll.natural_success) {
+    if (roll.critical_success) {
       return <strong>{t('roll.critical_success')}</strong>
-    } else if (roll.natural_failure) {
+    } else if (roll.critical_failure) {
       return <strong>{t('roll.critical_failure')}</strong>
     } else {
       return t('roll.normal_roll')
