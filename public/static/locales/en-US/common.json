@@ -2,11 +2,20 @@
   "title": "Dice Roller",
   "subtitle": "A Random Dice Generator for RPG Campaigns",
   "rollinfo": {
-    "subtitle": "Roll Details"
+    "subtitle": "Roll Details",
+    "roll_success_message": "Roll redeemed successfully!"
   },
   "generics": {
     "close": "Close",
     "submit": "Submit"
+  },
+  "roll": {
+    "result": "Result",
+    "critical_failure": "Critical failure!",
+    "critical_success": "Critical success!",
+    "normal_roll": "Normal Roll",
+    "not_rolled": "Pending Roll...",
+    "roll_button_cta": "Roll Dice"
   },
   "navbar": {
     "new_roll": "New Roll",

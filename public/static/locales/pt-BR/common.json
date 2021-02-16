@@ -2,11 +2,20 @@
   "title": "Rolador de Dados",
   "subtitle": "Um gerador de dados para Jogos de RPG",
   "rollinfo": {
-    "subtitle": "Informações da Rolagem"
+    "subtitle": "Informações da Rolagem",
+    "roll_success_message": "Rolagem realizada com sucesso!"
   },
   "generics": {
     "close": "Fechar",
     "submit": "Enviar"
+  },
+  "roll": {
+    "result": "Resultado",
+    "critical_failure": "Falha crítica!",
+    "critical_success": "Sucesso crítico!",
+    "normal_roll": "Normal",
+    "not_rolled": "Rolagem não realizada",
+    "roll_button_cta": "Rolar Dado"
   },
   "navbar": {
     "new_roll": "Nova Rolagem",

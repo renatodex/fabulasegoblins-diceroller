@@ -2,7 +2,7 @@ import { withTranslation } from 'i18n'
 import Anchor from 'components/anchor/anchor'
 import styles from './roll_card.module.scss'
 
-const RollCard = ({ roll }) => {
+const RollCard = ({ t, roll, onRoll, allowRoll = false }) => {
   const cardClass = () => {
     if (roll.natural_success) {
       return `${styles.card} ${styles['card--success']}`
@@ -15,11 +15,54 @@ const RollCard = ({ roll }) => {
 
   const cardLabel = () => {
     if (roll.natural_success) {
-      return <strong>Critical Success!</strong>
+      return <strong>{t('roll.critical_success')}</strong>
     } else if (roll.natural_failure) {
-      return <strong>Critical Failure!</strong>
+      return <strong>{t('roll.critical_failure')}</strong>
     } else {
-      return 'Normal Roll'
+      return t('roll.normal_roll')
+    }
+  }
+
+  const modifierText = () => {
+    if (roll.modifier && roll.modifier > 0) {
+      return `+${roll.modifier}`
+    }
+
+    if (roll.modifier && roll.modifier < 0) {
+      return `${roll.modifier}`
+    }
+
+    return `+0`
+  }
+
+  const renderResult = () => {
+    if (roll.result) {
+      return (
+        <div
+          className={`${styles.result} ${styles['result--rolled']}`}
+        >
+          {t('roll.result')}: {roll.result_calculated} ({roll.result}{modifierText()})
+        </div>
+      )
+    } else {
+      if (allowRoll) {
+        return (
+          <div
+            onClick={(e) => { e.preventDefault(); onRoll(roll) }}
+            className={`${styles.result} ${styles['result--pending']}`}
+          >
+            {t('roll.roll_button_cta')}
+          </div>
+        )
+      } else {
+        return (
+          <div
+            className={`${styles.result} ${styles['result--not-rolled']}`}
+          >
+            {t('roll.not_rolled')}
+          </div>
+        )
+      }
     }
   }
 
@@ -31,13 +74,11 @@ const RollCard = ({ roll }) => {
     >
       <h3>Token: {roll.token.split('', 7)}...{roll.token.slice(-7)}</h3>
       <p>Número de Faces: {roll.total_faces}</p>
-      <p>Modificadores: {roll.modifier}</p>
+      <p>Modificadores: {roll.modifier || '-'}</p>
       <p>Data de Criação: {roll.created_at}</p>
       <p>{cardLabel()}</p>
 
-      <div>
-        Resultado: {roll.result}
-      </div>
+      {renderResult()}
     </a>
   )
 }

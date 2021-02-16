@@ -39,14 +39,30 @@
   line-height: 1.5;
 }
 
-.card div {
-  border: 1px solid #000;
+.card .result {
   text-align: center;
   padding: 0.6rem;
   border-radius: 12px;
   font-size: 1.70rem;
   margin-top: 1rem;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.result--rolled {
   background-color: #000;
   border-color: #fff;
+  color: #fff;
+}
+
+.result--not-rolled {
+  background-color: #ccc;
+  border-color: #9c9c9c;
+  color: #363636;
+}
+
+.result--pending {
+  background-color: rgb(116, 54, 207);
+  border-color: #000;
   color: #fff;
 }
